@@ -1,0 +1,27 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "Osthelia",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Osthelia/Osthelia-Website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Osthelia/Osthelia-Website/issues"
+  },
+  "homepage": "https://github.com/Osthelia/Osthelia-Website#readme",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --watch"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "sharp": "^0.35.5",
+    "tailwindcss": "^3.4.19"
+  }
+}
