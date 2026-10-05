@@ -1,1 +1,1 @@
-const OSTHELIA_API_BASE = "http://localhost:3000";
+const OSTHELIA_API_BASE = "https://gc-stats.app";
