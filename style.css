@@ -1047,6 +1047,152 @@ body {
   border-color: rgba(155,92,255,.5);
 }
 
+/* ---------- Sponsors ---------- */
+
+#sponsors[hidden] {
+  display: none;
+}
+
+#sponsors .section-inner {
+  max-width: 1250px;
+}
+
+.sponsor-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 7vw, 96px);
+  text-align: left;
+}
+
+.sponsor-row {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: stretch;
+}
+
+.sponsor-row + .sponsor-row {
+  position: relative;
+}
+
+/* Divider sits halfway through the gap rather than hugging the next row. */
+.sponsor-row + .sponsor-row::before {
+  content: "";
+  position: absolute;
+  top: calc(clamp(48px, 7vw, 96px) / -2);
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+}
+
+.sponsor-row-solo {
+  grid-template-columns: 1fr;
+}
+
+/* Alternate sides: even rows mirror the layout, identity block on the right
+   with its content flush to the right edge. */
+.sponsor-row:nth-child(even):not(.sponsor-row-solo) {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.sponsor-row:nth-child(even) .sponsor-identity {
+  order: 2;
+}
+
+.sponsor-row:nth-child(even):not(.sponsor-row-solo) .sponsor-identity {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.sponsor-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(32px, 5vw, 56px);
+}
+
+.sponsor-row-solo .sponsor-identity {
+  align-items: center;
+  text-align: center;
+}
+
+.sponsor-logo {
+  max-width: 180px;
+  max-height: 90px;
+  margin-bottom: 22px;
+  object-fit: contain;
+}
+
+.sponsor-logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  color: var(--violet-light);
+  font-size: 26px;
+  border: 1px solid rgba(214,184,255,.3);
+  box-shadow: 0 0 20px rgba(155,92,255,.2);
+}
+
+.sponsor-name {
+  font-family: "Cormorant Garamond";
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.1;
+  color: white;
+}
+
+.sponsor-desc {
+  margin-top: 12px;
+  color: var(--violet-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sponsor-visit {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  transition: color .3s ease;
+}
+
+a.sponsor-identity:hover .sponsor-visit {
+  color: white;
+}
+
+.sponsor-about {
+  display: flex;
+  align-items: center;
+  padding: clamp(32px, 5vw, 56px);
+}
+
+.sponsor-about p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+  white-space: pre-line;
+}
+
+@media (max-width: 767px) {
+  .sponsor-row,
+  .sponsor-row:nth-child(even):not(.sponsor-row-solo) {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-row:nth-child(even) .sponsor-identity {
+    order: 0;
+  }
+
+  .sponsor-row:nth-child(even):not(.sponsor-row-solo) .sponsor-identity {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
 /* ---------- Finances ---------- */
 
 .finance-summary {

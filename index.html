@@ -238,6 +238,25 @@
       </div>
     </section>
 
+    <!-- SPONSORS (hidden until sponsors.json has entries) -->
+    <section id="sponsors" class="section" hidden>
+      <div class="section-inner text-center">
+
+        <div class="reveal in">
+          <div class="section-label !mx-auto justify-center">They believe in it</div>
+
+          <h2 class="big-title font-serif">Our sponsors</h2>
+
+          <p class="mx-auto mt-5 max-w-[560px] text-sm leading-[1.75] text-[#988da7]">
+            Thanks to the people and organizations who help keep Osthelia free and independent.
+          </p>
+        </div>
+
+        <div id="sponsors-root" class="sponsor-list mt-16"></div>
+
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="section-inner reveal grid items-center gap-14 md:grid-cols-2 md:gap-24">
@@ -348,5 +367,6 @@
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="script.js"></script>
+  <script src="sponsors.js"></script>
 </body>
 </html>
